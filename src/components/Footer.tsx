@@ -1,0 +1,3 @@
+import { ArrowUpRight } from 'lucide-react'
+import type { Lang } from '../data/potteryData'
+export default function Footer({lang}:{lang:Lang}){const en=lang==='en';return <footer className="footer"><div className="footer-main"><a href="#home" className="brand footer-brand"><span className="brand-mark">土</span><span>土與火的數位開窯<small>EARTH · FIRE · MIAOLI</small></span></a><p>{en?'An ongoing conversation between earth, fire, and the people of Miaoli.':'一段由苗栗的土、窯火與人共同寫下的故事。'}</p><a className="footer-top" href="#home">{en?'BACK TO THE BEGINNING':'回到頁首'} <ArrowUpRight size={14}/></a></div><div className="footer-bottom"><span>© 2026 EARTH & FIRE · MIAOLI, TAIWAN</span><span>{en?'HANDMADE WITH TIME & FIRE':'以時間與火手作而成'}</span></div></footer>}

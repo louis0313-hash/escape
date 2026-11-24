@@ -1,0 +1,12 @@
+import { useState } from 'react'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import HeritageSection from './components/HeritageSection'
+import GallerySection from './components/GallerySection'
+import PotteryModal from './components/PotteryModal'
+import PhilosophySection from './components/PhilosophySection'
+import BookingSection from './components/BookingSection'
+import FloatingContact from './components/FloatingContact'
+import Footer from './components/Footer'
+import type { Lang, Pottery } from './data/potteryData'
+export default function App(){const [lang,setLang]=useState<Lang>('zh');const [selected,setSelected]=useState<Pottery|null>(null);const [inquiry,setInquiry]=useState('');const inquire=(id:string)=>{setInquiry(id);setSelected(null);document.querySelector('#booking')?.scrollIntoView({behavior:'smooth'});};return <><Navbar lang={lang} setLang={setLang}/><main><Hero lang={lang}/><HeritageSection lang={lang}/><GallerySection lang={lang} onSelect={setSelected}/><PhilosophySection lang={lang}/><BookingSection lang={lang} initialInquiry={inquiry}/></main><Footer lang={lang}/><FloatingContact lang={lang}/><PotteryModal item={selected} lang={lang} onClose={()=>setSelected(null)} onInquiry={inquire}/></>}
